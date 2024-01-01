@@ -9,10 +9,6 @@ node {
     }
   }
  stage('Scan with Trivy') {
-        steps {
-            script {
-               sh "trivy fs ."
-            }
-        }
-   }
+       sh "trivy fs ."
+ }
 }
