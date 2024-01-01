@@ -8,9 +8,11 @@ node {
       sh "${scannerHome}/bin/sonar-scanner"
     }
   }
-  stage('TRIVY FS SCAN') {
-    steps {
-     sh "trivy fs ."
-     }
-  }
+ stage('Scan with Trivy') {
+        steps {
+            script {
+               sh "trivy fs ."
+            }
+        }
+   }
 }
